@@ -1,0 +1,6 @@
+framework module ImageTextView {
+  umbrella header "ImageTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,14 @@
+PODS:
+  - ImageTextView (1.0.0)
+
+DEPENDENCIES:
+  - ImageTextView (from `../`)
+
+EXTERNAL SOURCES:
+  ImageTextView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ImageTextView: 482daf2606416ad82b1ed85f0c02458b097f8920
+
+COCOAPODS: 0.39.0

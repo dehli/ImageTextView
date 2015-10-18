@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cgj-Qw-Lzd">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZXm-UE-995">
+            <objects>
+                <navigationController id="Cgj-Qw-Lzd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oMt-4q-TYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3gz-dt-ZHk" kind="relationship" relationship="rootViewController" id="7Vs-np-oHH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sgk-Gh-p7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="599"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lhY-up-AdH">
+            <objects>
+                <viewController id="3gz-dt-ZHk" customClass="ViewController" customModule="ImageTextViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="739-Up-jKG"/>
+                        <viewControllerLayoutGuide type="bottom" id="YXK-ba-cjN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WBb-Re-CVd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZYM-v0-dak" customClass="ImageTextView" customModule="ImageTextView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZYM-v0-dak" firstAttribute="leading" secondItem="WBb-Re-CVd" secondAttribute="leading" id="Ide-BW-4ek"/>
+                            <constraint firstItem="ZYM-v0-dak" firstAttribute="bottom" secondItem="YXK-ba-cjN" secondAttribute="top" id="OtA-W2-bX0"/>
+                            <constraint firstAttribute="trailing" secondItem="ZYM-v0-dak" secondAttribute="trailing" id="g9v-uJ-xQS"/>
+                            <constraint firstItem="ZYM-v0-dak" firstAttribute="top" secondItem="739-Up-jKG" secondAttribute="bottom" constant="-64" id="wIn-2u-HVv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3lA-iz-Jku">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ges-rd-AfV">
+                            <connections>
+                                <action selector="addImage:" destination="3gz-dt-ZHk" id="4SF-oF-Ipc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageTextView" destination="ZYM-v0-dak" id="rjG-3y-JeU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gWU-nb-HAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="599"/>
+        </scene>
+    </scenes>
+</document>
