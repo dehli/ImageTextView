@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = "ImageTextView"
-  s.version               = "1.0.0"
+  s.version               = "1.0.1"
   s.summary               = "`ImageTextView` is a `UITextView` with images."
 
   s.description           = <<-DESC

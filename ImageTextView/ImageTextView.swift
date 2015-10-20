@@ -8,9 +8,16 @@
 
 import UIKit
 
+public protocol ImageTextViewDelegate {
+    func textViewShouldBeginEditing(textView: ImageTextView!) -> Bool
+    func textViewDidEndEditing(textView: ImageTextView!)
+    func textViewDidChange(textView: ImageTextView!)
+}
+
 public class ImageTextView: UITextView, UITextViewDelegate {
     
     public var placeholder: String!
+    public var realDelegate: ImageTextViewDelegate!
     
     private var placeholderLabel: UILabel!
     
@@ -21,10 +28,11 @@ public class ImageTextView: UITextView, UITextViewDelegate {
         
         placeholderLabel = UILabel()
         placeholderLabel.text = placeholder
-        placeholderLabel.backgroundColor = UIColor.whiteColor()
+        placeholderLabel.backgroundColor = UIColor.clearColor()
         placeholderLabel.textColor = UIColor.lightGrayColor()
         placeholderLabel.font = font
         addSubview(placeholderLabel)
+        
         
         delegate = self
     }
@@ -61,15 +69,21 @@ public class ImageTextView: UITextView, UITextViewDelegate {
         placeholderLabel.hidden = true
     }
     
+    // UITextViewDelegate
+    
     public func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         placeholderLabel.hidden = true
-        return true
+        return realDelegate.textViewShouldBeginEditing(self)
     }
     
     public func textViewDidEndEditing(textView: UITextView) {
         if text == "" {
             placeholderLabel.hidden = false
         }
+        realDelegate.textViewDidEndEditing(self)
     }
     
+    public func textViewDidChange(textView: UITextView) {
+        realDelegate.textViewDidChange(self)
+    }
 }
